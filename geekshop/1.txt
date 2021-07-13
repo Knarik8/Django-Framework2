@@ -1,0 +1,391 @@
+    1  logout
+    2  ssh-keygen
+    3  cat /root/.ssh/
+    4  cat/root/.ssh/
+    5  cat /root/.ssh/
+    6  cat /root/.ssh/id_rsa.pub
+    7  ssh-copy-id root@5.63.155.9
+    8  ssh root@5.63.155.9
+    9  ssh-keygen
+   10  cat /root/.ssh/id_rsa.pub
+   11  apt update
+   12  apt install xginx
+   13  apt install nginx
+   14  apt install postgresql-contrib
+   15  apt install python3-venv
+   16  python3
+   17  apt install git
+   18  apt install mc
+   19  mcedit /etc/postgresql/12/main/pg_hba.conf
+   20  systemctl restart postgresql
+   21  systemctl status postgresql
+   22  useradd -g www-data -m django
+   23  cd /home/django/
+   24  git clone git@github.com:Knarik8/Django-Framework2.git
+   25  ls
+   26  ls-la
+   27  ls -la
+   28  python3 -m venv env
+   29  source env/bin/activate
+   30  cd geekshop
+   31  cd geekshop/
+   32  cd Django-Framework2/
+   33  source env/bin/activate
+   34  mc
+   35  deactivate
+   36  mc
+   37  python3 -m venv env
+   38  source env/bin/activate
+   39  pip3 install -r requirements.txt
+   40  10
+   41  source env/bin/activate
+   42  10
+   43  quit
+   44  cd geekshop
+   45  cd geekshop/
+   46  cd /home/django/
+   47  cd geekshop/
+   48  cd my_django/
+   49  cd Django-Framework2/
+   50  pip3 install whell
+   51  pip3 install wheel
+   52  python3 -m venv env
+   53  source env/bin/activate
+   54  pip3 install wheel
+   55  pip3 install -r requirements.txt
+   56  cd my_django/
+   57  pip3 install gunicorn
+   58  psql -U postgres
+   59  python3 manage.py fill_db
+   60  cd geekshop
+   61  cd geekshop/
+   62  cd Django-Framework2/
+   63  cd /home/django/
+   64  cd Django-Framework2/
+   65  pip3 install wheel
+   66  python3 -m venv env
+   67  source env/bin/activate
+   68  pip3 install wheel
+   69  pip3 install -r requirements.txt
+   70  cd geekshop/
+   71  logout
+   72  apt update
+   73  apt install nginx
+   74  apt install postgresql postgresql-contrib
+   75  apt install python3-venv
+   76  apt install git
+   77  apt install mc
+   78  mcedit /etc/postgresql/12/main/
+   79  mcedit /etc/postgresql/12/main/pg_hba.conf
+   80  systemctl restart postgresql
+   81  systemctl status postgresql
+   82  useradd -g www-data -m django
+   83  useradd -g www-data -m django1
+   84  cd /home/django/
+   85  git clone git@github.com:Knarik8/Django-Framework2.git
+   86  ls
+   87  ls -la
+   88  python3 -m venv env
+   89  source env/bin/activate
+   90  cd geekshop/
+   91  cd Django-Framework2/
+   92  python3 -m venv env
+   93  source env/bin/activate
+   94  pip3 install -r requirements.txt
+   95  ls
+   96  ls -la
+   97  pip3 install -r requirements.txt
+   98  git add .
+   99  ls
+  100  cd
+  101  cd /home/django/
+  102  git clone git@github.com:Knarik8/Django-Framework2.git
+  103  cd /home/django/
+  104  ls
+  105  cd Django-Framework2/
+  106  ls
+  107  cd geekshop/
+  108  ls
+  109  pip3 install -r requirements.txt 
+  110  pip install -r requirements.txt 
+  111  pip install -r requirements
+  112  pip install rootpy
+  113  exit
+  114  cd /home/django/
+  115  cd /Django-Framework2/
+  116  cd geekshopDjango-Framework2/
+  117  cd Django-Framework2/
+  118  cd geekshop
+  119  cd geekshop/
+  120  cd /geekshop/
+  121  ls
+  122  ls -la
+  123  nginx
+  124  cd geekshop/
+  125  ls
+  126  cd Django-Framework2
+  127  cd /home/django/
+  128  ls
+  129  cd Django-Framework2
+  130  ls
+  131  cd /home/django/
+  132  ls
+  133  cd Django-Framework2/
+  134  ls
+  135  ls
+  136  cd home/django
+  137  ls
+  138  cd Django-Framework2/
+  139  ls
+  140  cd ..
+  141  rm -rf Django-Framework2/
+  142  ls
+  143  rm -rf env/
+  144  ls
+  145  cd /home/django/
+  146  ls
+  147  git clone git@github.com:Knarik8/Django-Framework2.git
+  148  ls
+  149  cd Django-Framework2/
+  150  ls
+  151  pip3 install -r requirements.txt
+  152  pip install -r requirements.txt
+  153  cd geekshop/
+  154  ls
+  155  pip3 install -r requirements.txt
+  156  pip3.2  install -r requirements.txt
+  157  sudo pip install -U requests
+  158  pip3.2  install -r requirements.txt
+  159  pip3  install -r requirements.txt
+  160  python pip3 install -r requirements.txt
+  161  pip3  install -r requirements.txt
+  162  python -m venv venv
+  163  python -m venv env
+  164  python3 -m venv env
+  165  source env/bin/activate
+  166  pip3  install -r requirements.txt
+  167  pip3 install gunicorn
+  168  python3 manage.py migrate
+  169  psql -U postgres
+  170  python3 manage.py migrate
+  171  python3 manage.py fill_db
+  172  git status
+  173  python3 manage.py runserver
+  174  mcedit /etc/systemd/system/gunicorn.service
+  175  systemctl enable gunicorn
+  176  systemctl start gunicorn
+  177  systemctl status gunicorn
+  178  chown -R django /home/django/
+  179  mcedit /etc/nginx/sites-available/geekshop
+  180  ln -s /etc/nginx/sites-available/geekshop /etc/nginx/sites-enabled/
+  181  mc
+  182  nginx -t
+  183  systemctl restart nginx
+  184  tail -f /var/log/nginx/error.log
+  185  systemctl status gunicorn
+  186  systemctl restart gunicorn
+  187  systemctl status gunicorn
+  188  cd home/django/
+  189  cd /home/django/
+  190  ls
+  191  cd Django-Framework2/
+  192  ls
+  193  cd geekshop/
+  194  ls
+  195  systemctl restart gunicorn
+  196  systemctl status gunicorn
+  197  source env/bin/activate
+  198  systemctl restart gunicorn
+  199  systemctl status gunicorn
+  200  mcedit /etc/systemd/system/gunicorn.service
+  201  systemctl restart gunicorn
+  202  systemctl daemon-reload
+  203  systemctl restart gunicorn
+  204  systemctl status gunicorn
+  205  ln -s /etc/nginx/sites-available/geekshop /etc/nginx/sites-enabled/
+  206  mc
+  207  mcedit /etc/systemd/system/gunicorn.service
+  208  systemctl daemon-reload
+  209  systemctl restart gunicorn
+  210  systemctl status gunicorn
+  211  mc
+  212  ln -s /etc/nginx/sites-available/geekshop
+  213  mc
+  214  ln -s /etc/nginx/sites-available/geekshop
+  215  mc
+  216  ln -s /etc/nginx/sites-available/geekshop /etc/nginx/sites-enabled/
+  217  ln -s /etc/nginx/sites-available/
+  218  ls
+  219  cd sites-available
+  220  ls
+  221  mkdir geekshop
+  222  ls
+  223  cd /home/django2/
+  224  cd /home/django/
+  225  git clone
+  226  git clone git@github.com:Knarik8/Django-Framework2.git
+  227  ls
+  228  ls -la
+  229  source env/bin/activate
+  230  cd geekshop/
+  231  cd Django-Framework2/
+  232  cd geekshop/
+  233  source env/bin/activate
+  234  pip3 install wheel
+  235  pip3  install -r requirements.txt
+  236  python3 manage.py runserver 0.0.0.0:8000
+  237  source env/bin/activate
+  238  cd /home/django/
+  239  cd Django-Framework2/
+  240  cd geekshop/
+  241  source env/bin/activate
+  242  python manage.py migrate
+  243  python manage.py makemigrations
+  244  python manage.py migrate
+  245  psql -U postgres
+  246  python manage.py migrate
+  247  python manage.py fill_db
+  248  python manage.py runserver
+  249  cd geekshop/
+  250  cd Django-Framework2/
+  251  cd /home/django/
+  252  cd geekshop/
+  253  cd Django-Framework2/
+  254  cd geekshop/
+  255  source env/bin/activate
+  256  python3 manage.py fill_db
+  257  cd /home/django/
+  258  cd Django-Framework2/
+  259  cd geekshop/
+  260  python3 manage.py fill_db
+  261  source env/bin/activate
+  262  python3 manage.py fill_db
+  263  psql -U postgres
+  264  python manage.py migrate
+  265  cd /home/django/
+  266  cd Django-Framework2/
+  267  cd geekshop
+  268  source env/bin/activate
+  269  python manage.py fill_db
+  270  python manage.py runserver
+  271  cd /home/django
+  272  cd Django-Framework2/
+  273  cd geekshop
+  274  source env/bin/activate
+  275  python manage.py fill_dp
+  276  python manage.py fill_db
+  277  python manage.py runserver
+  278  cd /home/django
+  279  cd Django-Framework2/
+  280  cd geekshop
+  281  psql -U postgres
+  282  python manage.py migrate
+  283  source env/bin/activate
+  284  python manage.py migrate
+  285  python manage.py fill_db
+  286  python manage.py runserver
+  287  python manage.py runserver 0.0.0.0:8000
+  288  mcedit /etc/systemd/system/gunicorn.service
+  289  mcedit /etc/systemd/system/gunicorn.service
+  290  systemctl start gunicorn
+  291  systemctl status gunicorn
+  292  mcedit /etc/nginx/sites-available/geekshop
+  293  {     listen 80;     server_name 192.168.0.98;     location = /favicon.ico { access_log off; log_not_found off; }
+  294  mcedit /etc/nginx/sites-available/geekshop
+  295  cd
+  296  home/django
+  297  cd home/django/
+  298  cd /home/django/
+  299  cd Django-Framework2/
+  300  cd geekshop
+  301  cd 
+  302  mc
+  303  mcedit /etc/nginx/sites-available/geekshop
+  304  ln -s /etc/nginx/sites-available/geekshop /etc/nginx/sites-enabled/
+  305  mc
+  306  ln -s /etc/nginx/sites-available/geekshop /etc/nginx/sites-enabled/
+  307  nginx -t
+  308  systemctl restart nginx
+  309  tail -f /var/log/nginx/error.log
+  310  mc
+  311  cd /etc/nginx/sites-available/geekshop
+  312  cd /etc/nginx/sites-available/
+  313  mc
+  314  c
+  315  cd
+  316  cd /home/django
+  317  cd Dja
+  318  cd Django-Framework2/
+  319  cd geekshop
+  320  cd /etc/nginx/sites-available/geekshop
+  321  mcedit /etc/nginx/sites-available/geekshop
+  322  systemctl restart nginx
+  323  cd /etc/nginx/sites-available/geekshop
+  324  cd /etc/nginx/sites-available/geekshop/
+  325  cd
+  326  cd /home/django
+  327  cd Django-Framework2/
+  328  cd geekshop
+  329  mc
+  330  mcedit /etc/nginx/sites-available/geekshop
+  331  systemctl restart nginx
+  332  св
+  333  cd
+  334  deactivate
+  335  mcedit /etc/postgresql/12/main/pg_hba.conf
+  336  cd /home/django
+  337  cd Django-Framework2/
+  338  cd geekshop
+  339  ls
+  340  cd geekshop
+  341  ls
+  342  cd ..
+  343  cm
+  344  c
+  345  cd /home/django
+  346  cd Django-Framework2/
+  347  cd geekshop
+  348  mc
+  349  source env/bin/activate
+  350  mc
+  351  cd /etc/nginx/sites-available/geekshop
+  352  mcedit /etc/postgresql/12/main/pg_hba.conf
+  353  mcedit /etc/nginx/sites-available/geekshop
+  354  ln -s /etc/nginx/sites-available/geekshop /etc/nginx/sites-enabled/
+  355  mc
+  356  nginx -t
+  357  systemctl restart nginx
+  358  cd home/django
+  359  cd /home/django/
+  360  ls
+  361  cd Django-Framework2/
+  362  ls
+  363  cd geekshop/
+  364  ls
+  365  show databases
+  366  source env/bin/activate
+  367  psql -U postgresg
+  368  psql -U postgres
+  369  python manage.py migrate
+  370  python manage.py fill_db
+  371  python manage.py runserver
+  372  source env/bin/activate
+  373  cd /home/geekshop
+  374  cd /home/geekshop/
+  375  cd /home/django/
+  376  cd Django-Framework2/
+  377  cd geekshop
+  378  source env/bin/activate
+  379  python manage.py loaddata db.json
+  380  python manage.py migrate
+  381  python manage.py loaddata db.sqlite3
+  382  cd
+  383  deactivate
+  384  cd /home/django
+  385  cd /Django-Framework2
+  386  cd /Django-Framework2/
+  387  cd Django-Framework2/
+  388  cd geekshop/
+  389  source env/bin/activate
+  390  history
+  391  history > /tmp/1.txt

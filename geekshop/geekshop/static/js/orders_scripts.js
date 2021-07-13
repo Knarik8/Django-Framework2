@@ -23,7 +23,7 @@ window.onload = function () {
 
     $('.order_form').on(types: 'click', selector: 'input[type=number]', data:function(){
         var target = event.target;
-        orderitem_num = parseInt(target.name.replace('orderitems-', '').replace('-quantity'));
+        orderitem_num = parseInt(target.name.replace('orderitems-', '').replace('-quantity', ''));
         if (price_arr[orderitem_num]){
             orderitem_quantity = parseInt(target.value);
             delta_quantity = orderitem_quantity - quantity_arr[orderitem_num];

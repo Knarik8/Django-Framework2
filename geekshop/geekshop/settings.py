@@ -172,7 +172,7 @@ STATIC_URL = '/static/'
 #     os.path.join(BASE_DIR, "geekshop", "static"),
 # )
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'geekshop', 'static')
 
 
 #для поиска папок со статикой внутри папок приложения

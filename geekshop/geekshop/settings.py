@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'geekshop.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+#
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -143,10 +143,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "geekshop", "static"),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, "geekshop", "static"),
+# )
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'geekshop', 'static')
 
 #для поиска папок со статикой внутри папок приложения
 STATICFILES_FINDERS = (

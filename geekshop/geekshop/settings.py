@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'ordersapp',
     'social_django',
     'debug_toolbar',
+    'template_profiler_panel'
 
 ]
 

@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from django.shortcuts import HttpResponseRedirect, get_object_or_404
 from django.shortcuts import render
 from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import CreateView, UpdateView
 
 from .forms import ShopUserLoginForm, ShopUserRegisterForm, ShopUserEditForm, ShopUserProfileEditForm
@@ -13,7 +14,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 from .models import ShopUser
 
-
+@csrf_exempt
 class Login(LoginView):
     model=ShopUser
     form_class = ShopUserLoginForm

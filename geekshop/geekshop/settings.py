@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     'ordersapp',
     'social_django',
     'debug_toolbar',
-    'template_profiler_panel'
+    'template_profiler_panel',
+    'django_extensions',
+
 
 ]
 
@@ -86,10 +88,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'geekshop.wsgi.application'
 
-
+#
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-#
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',

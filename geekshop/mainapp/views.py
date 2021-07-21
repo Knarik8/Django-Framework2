@@ -79,7 +79,9 @@ def product(request, pk):
         'title': title,
         'product': get_object_or_404(Product, pk=pk),
         # 'basket': get_basket(request.user),
-        'categories': ProductCategory.objects.all()
+        # 'categories': ProductCategory.objects.all(),
+        'categories': ProductCategory.objects.filter().select_related()
+
     }
 
     return render(request, 'product.html', context)

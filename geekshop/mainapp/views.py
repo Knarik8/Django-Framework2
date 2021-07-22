@@ -5,6 +5,8 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from mainapp.models import ProductCategory, Product
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.conf import settings
+from django.core.cache import cache
 
 from basketapp.models import Basket
 
@@ -14,6 +16,17 @@ from basketapp.models import Basket
 #         return Basket.objects.filter(user=user)
 #     else:
 #         return []
+
+def get_links_menu():
+   if settings.LOW_CACHE:
+       key = 'links_menu'
+       links_menu = cache.get(key)
+       if links_menu is None:
+           links_menu = ProductCategory.objects.filter(is_active=True)
+           cache.set(key, links_menu)
+       return links_menu
+   else:
+       return ProductCategory.objects.filter(is_active=True)
 
 
 def get_hot_product():
@@ -30,17 +43,18 @@ def products(request, pk=None, page=1):
     title = 'продукты'
     category = ''
     products = ''
+    # links_menu = ProductCategory.objects.all()
 
     categories = ProductCategory.objects.all()
     # basket = get_basket(request.user)
 
-    if pk is not None:
-        if pk == 0:
-            products = Product.objects.all().order_by('price')
+    if pk:
+        if pk == '0':
             category = {
                 'pk': 0,
                 'name': 'Все'
             }
+            products = Product.objects.all().order_by('price')
         else:
             category = get_object_or_404(ProductCategory, pk=pk)
             # products = Product.objects.filter(category_id__pk=pk).order_by('price')
@@ -48,13 +62,21 @@ def products(request, pk=None, page=1):
 
 
         paginator=Paginator(products, 2)
-
         try:
             products_paginator=paginator.page(page)
         except PageNotAnInteger:
             products_paginator=paginator.page(1)
         except EmptyPage:
             products_paginator=paginator.page(paginator.num_pages)
+
+        context = {
+            'title': title,
+            'links_menu': get_links_menu(),
+            'category': category,
+            'products': products_paginator,
+        }
+
+        return  render(request, 'products_list.html', context=context)
 
     hot_product = get_hot_product()
     same_products = get_same_products(hot_product)
@@ -63,21 +85,25 @@ def products(request, pk=None, page=1):
         'title': title,
         'categories': categories,
         'category': category,
-        'products': products_paginator,
+        'links_menu': get_links_menu(),
+        # 'products': products_paginator,
         # 'basket': basket,
         'hot_product': hot_product,
         'same_products': same_products,
     }
-    return render(request, 'products_list.html', context=context)
+    return render(request, 'products.html', context=context)
 
 
 @login_required
 def product(request, pk):
     title = 'страница продукта'
+    # links_menu = ProductCategory.objects.all()
+
 
     context = {
         'title': title,
         'product': get_object_or_404(Product, pk=pk),
+        'links_menu': get_links_menu(),
         # 'basket': get_basket(request.user),
         # 'categories': ProductCategory.objects.all(),
         'categories': ProductCategory.objects.filter().select_related()

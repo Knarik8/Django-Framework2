@@ -29,6 +29,18 @@ def get_links_menu():
        return ProductCategory.objects.all()
 
 
+def get_product(pk):
+   if settings.LOW_CACHE:
+       key = f'product_{pk}'
+       product = cache.get(key)
+       if product is None:
+           product = get_object_or_404(Product, pk=pk)
+           cache.set(key, product)
+       return product
+   else:
+       return get_object_or_404(Product, pk=pk)
+
+
 def get_hot_product():
     products = Product.objects.all()
 
@@ -88,10 +100,13 @@ def products(request, pk=None, page=1):
 @login_required
 def product(request, pk):
     title = 'страница продукта'
+    # product: get_object_or_404(Product, pk=pk)
+
+    product = get_product(pk)
 
     context = {
         'title': title,
-        'product': get_object_or_404(Product, pk=pk),
+        'product': product,
         'links_menu': get_links_menu(),
         # 'basket': get_basket(request.user),
         # 'categories': ProductCategory.objects.all(),

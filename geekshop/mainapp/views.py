@@ -49,12 +49,11 @@ def products(request, pk=None, page=1):
     # basket = get_basket(request.user)
 
     if pk:
-        if pk == '0':
+        if pk == 0:
             category = {
                 'pk': 0,
                 'name': 'Все'
             }
-            products = Product.objects.all().order_by('price')
         else:
             category = get_object_or_404(ProductCategory, pk=pk)
             # products = Product.objects.filter(category_id__pk=pk).order_by('price')
@@ -69,14 +68,6 @@ def products(request, pk=None, page=1):
         except EmptyPage:
             products_paginator=paginator.page(paginator.num_pages)
 
-        context = {
-            'title': title,
-            'links_menu': get_links_menu(),
-            'category': category,
-            'products': products_paginator,
-        }
-
-        return  render(request, 'products_list.html', context=context)
 
     hot_product = get_hot_product()
     same_products = get_same_products(hot_product)
@@ -86,19 +77,17 @@ def products(request, pk=None, page=1):
         'categories': categories,
         'category': category,
         'links_menu': get_links_menu(),
-        # 'products': products_paginator,
+        'products': products_paginator,
         # 'basket': basket,
         'hot_product': hot_product,
         'same_products': same_products,
     }
-    return render(request, 'products.html', context=context)
+    return render(request, 'products_list.html', context=context)
 
 
 @login_required
 def product(request, pk):
     title = 'страница продукта'
-    # links_menu = ProductCategory.objects.all()
-
 
     context = {
         'title': title,

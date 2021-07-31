@@ -1,44 +1,37 @@
 import random
 
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
-from django.shortcuts import get_object_or_404
-from mainapp.models import ProductCategory, Product
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.conf import settings
-from django.core.cache import cache
-
 from basketapp.models import Basket
+from django.conf import settings
+from django.contrib.auth.decorators import login_required
+from django.core.cache import cache
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.shortcuts import get_object_or_404
+from django.shortcuts import render
+from mainapp.models import ProductCategory, Product
 
-
-# def get_basket(user):
-#     if user.is_authenticated:
-#         return Basket.objects.filter(user=user)
-#     else:
-#         return []
 
 def get_links_menu():
-   if settings.LOW_CACHE:
-       key = 'links_menu'
-       links_menu = cache.get(key)
-       if links_menu is None:
-           links_menu = ProductCategory.objects.all()
-           cache.set(key, links_menu)
-       return links_menu
-   else:
-       return ProductCategory.objects.all()
+    if settings.LOW_CACHE:
+        key = 'links_menu'
+        links_menu = cache.get(key)
+        if links_menu is None:
+            links_menu = ProductCategory.objects.all()
+            cache.set(key, links_menu)
+        return links_menu
+    else:
+        return ProductCategory.objects.all()
 
 
 def get_product(pk):
-   if settings.LOW_CACHE:
-       key = f'product_{pk}'
-       product = cache.get(key)
-       if product is None:
-           product = get_object_or_404(Product, pk=pk)
-           cache.set(key, product)
-       return product
-   else:
-       return get_object_or_404(Product, pk=pk)
+    if settings.LOW_CACHE:
+        key = f'product_{pk}'
+        product = cache.get(key)
+        if product is None:
+            product = get_object_or_404(Product, pk=pk)
+            cache.set(key, product)
+        return product
+    else:
+        return get_object_or_404(Product, pk=pk)
 
 
 def get_hot_product():
@@ -108,6 +101,9 @@ def products(request, pk=None, page=1):
     links_menu = ProductCategory.objects.filter(is_active=True)
     basket = get_basket(request.user)
 
+    hot_product = get_hot_product()
+    same_products = get_same_products(hot_product)
+
     if pk:
         if pk == '0':
             category = {
@@ -131,15 +127,13 @@ def products(request, pk=None, page=1):
         content = {
             'title': title,
             'links_menu': links_menu,
+            'hot_product': hot_product,
             'category': category,
             'products': products_paginator,
             'basket': basket,
         }
 
-        return render(request, 'mainapp/products_list.html', content)
-
-    hot_product = get_hot_product()
-    same_products = get_same_products(hot_product)
+        return render(request, 'products_list.html', content)
 
     content = {
         'title': title,
@@ -149,7 +143,8 @@ def products(request, pk=None, page=1):
         'basket': basket,
     }
 
-    return render(request, 'mainapp/products.html', content)
+    return render(request, 'products.html', content)
+
 
 @login_required
 def product(request, pk):

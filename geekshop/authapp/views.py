@@ -20,8 +20,12 @@ class Login(LoginView):
     template_name = 'authapp/login.html'
 
 
+
 # def login(request):
 #     title = 'вход'
+#
+#   if request.user.is_authenticated:
+#         return HttpResponseRedirect(reverse('index'))
 #
 #     login_form = ShopUserLoginForm(data=request.POST)
 #     next = request.GET['next'] if 'next' in request.GET.keys() else ''
